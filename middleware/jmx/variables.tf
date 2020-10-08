@@ -417,7 +417,7 @@ variable "jmx_memory_non_heap_usage_threshold_critical" {
 }
 
 variable "jmx_memory_geometry_metaspace_space_usage_threshold_warning" {
-  description = "Warning threshold for jmx  metaspace usage"
+  description = "Warning threshold for jmx metaspace usage"
   type        = number
   default     = 80
 }
@@ -429,25 +429,25 @@ variable "jmx_memory_geometry_metaspace_space_usage_threshold_critical" {
 }
 
 variable "jmx_memory_survivor_space_usage_threshold_warning" {
-  description = "Warning threshold for jmx usage"
+  description = "Warning threshold for jmx survivor usage"
   type        = number
   default     = 80
 }
 
 variable "jmx_memory_survivor_space_usage_threshold_critical" {
-  description = "critical threshold for jmx usage"
+  description = "critical threshold for jmx survivor usage"
   type        = number
   default     = 90
 }
 
 variable "jmx_memory_compressed_class_space_usage_threshold_warning" {
-  description = "Warning threshold for jmx usage"
+  description = "Warning threshold for jmx compressed usage"
   type        = number
   default     = 80
 }
 
 variable "jmx_memory_compressed_class_space_usage_threshold_critical" {
-  description = "critical threshold for jmx usage"
+  description = "critical threshold for jmx compressed usage"
   type        = number
   default     = 90
 }

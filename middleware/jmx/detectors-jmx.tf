@@ -43,7 +43,7 @@ EOF
     severity              = "Warning"
     detect_label          = "WARN"
     disabled              = coalesce(var.jmx_memory_heap_usage_disabled_warning, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_heap_usage_notifications_warning, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_heap_usage_notifications_warning, "warning", []), var.notifications.warning)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
   rule {
@@ -51,7 +51,7 @@ EOF
     severity              = "Critical"
     detect_label          = "critical"
     disabled              = coalesce(var.jmx_memory_heap_usage_disabled_critical, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_heap_usage_notifications_critical, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_heap_usage_notifications_critical, "critical", []), var.notifications.critical)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
 }
@@ -73,7 +73,7 @@ EOF
     severity              = "Warning"
     detect_label          = "WARN"
     disabled              = coalesce(var.jmx_memory_survivor_space_usage_disabled_warning, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_survivor_space_usage_notifications_warning, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_survivor_space_usage_notifications_warning, "warning", []), var.notifications.warning)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
   rule {
@@ -81,7 +81,7 @@ EOF
     severity              = "Critical"
     detect_label          = "critical"
     disabled              = coalesce(var.jmx_memory_survivor_space_usage_disabled_critical, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_survivor_space_usage_notifications_critical, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_survivor_space_usage_notifications_critical, "critical", []), var.notifications.critical)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
 }
@@ -103,7 +103,7 @@ EOF
     severity              = "Warning"
     detect_label          = "WARN"
     disabled              = coalesce(var.jmx_memory_compressed_class_space_usage_disabled_warning, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_compressed_class_space_usage_notifications_warning, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_compressed_class_space_usage_notifications_warning, "critical", []), var.notifications.warning)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
   rule {
@@ -111,7 +111,7 @@ EOF
     severity              = "Critical"
     detect_label          = "critical"
     disabled              = coalesce(var.jmx_memory_compressed_class_space_usage_disabled_critical, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_compressed_class_space_usage_notifications_critical, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_compressed_class_space_usage_notifications_critical, "critical", []), var.notifications.critical)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
 }
@@ -133,7 +133,7 @@ EOF
     severity              = "Warning"
     detect_label          = "WARN"
     disabled              = coalesce(var.jmx_memory_g1_old_gen_space_usage_disabled_warning, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_g1_old_gen_space_usage_notifications_warning, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_g1_old_gen_space_usage_notifications_warning, "warning", []), var.notifications.warning)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
   rule {
@@ -141,7 +141,7 @@ EOF
     severity              = "Critical"
     detect_label          = "critical"
     disabled              = coalesce(var.jmx_memory_g1_old_gen_space_usage_disabled_critical, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_g1_old_gen_space_usage_notifications_critical, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_g1_old_gen_space_usage_notifications_critical, "critical", []), var.notifications.critical)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
 }
@@ -163,7 +163,7 @@ EOF
     severity              = "Warning"
     detect_label          = "WARN"
     disabled              = coalesce(var.jmx_memory_geometry_metaspace_space_usage_disabled_warning, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_geometry_metaspace_space_usage_notifications_warning, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_geometry_metaspace_space_usage_notifications_warning, "warning", []), var.notifications.warning)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
   rule {
@@ -171,7 +171,7 @@ EOF
     severity              = "Critical"
     detect_label          = "critical"
     disabled              = coalesce(var.jmx_memory_geometry_metaspace_space_usage_disabled_critical, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_geometry_metaspace_space_usage_notifications_critical, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_geometry_metaspace_space_usage_notifications_critical, "critical", []), var.notifications.critical)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
 }
@@ -195,7 +195,7 @@ EOF
     severity              = "Warning"
     detect_label          = "WARN"
     disabled              = coalesce(var.jmx_memory_codecache_space_usage_disabled_warning, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_codecache_space_usage_notifications_warning, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_codecache_space_usage_notifications_warning, "warning", []), var.notifications.warning)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
   rule {
@@ -203,7 +203,7 @@ EOF
     severity              = "Critical"
     detect_label          = "critical"
     disabled              = coalesce(var.jmx_memory_codecache_space_usage_disabled_critical, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_codecache_space_usage_notifications_critical, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_codecache_space_usage_notifications_critical, "critical", []), var.notifications.critical)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
 }
@@ -225,7 +225,7 @@ EOF
     severity              = "Warning"
     detect_label          = "WARN"
     disabled              = coalesce(var.jmx_memory_non_heap_usage_disabled_warning, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_non_heap_usage_notifications_warning, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_non_heap_usage_notifications_warning, "warning", []), var.notifications.warning)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
   rule {
@@ -233,7 +233,7 @@ EOF
     severity              = "Critical"
     detect_label          = "critical"
     disabled              = coalesce(var.jmx_memory_non_heap_usage_disabled_critical, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_memory_non_heap_usage_notifications_critical, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_memory_non_heap_usage_notifications_critical, "critical", []), var.notifications.critical)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
 }

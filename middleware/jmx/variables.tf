@@ -50,7 +50,7 @@ variable "jmx_memory_heap_usage_disabled_warning" {
 }
 
 variable "jmx_memory_heap_usage_notifications_warning" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -60,7 +60,7 @@ variable "jmx_memory_heap_usage_disabled_critical" {
 }
 
 variable "jmx_memory_heap_usage_notifications_critical" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -94,7 +94,7 @@ variable "jmx_thread_count_disabled_warning" {
 }
 
 variable "jmx_thread_count_notifications_warning" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -104,7 +104,7 @@ variable "jmx_thread_count_disabled_critical" {
 }
 
 variable "jmx_thread_count_notifications_critical" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -126,7 +126,7 @@ variable "jmx_memory_non_heap_usage_disabled_warning" {
 }
 
 variable "jmx_memory_non_heap_usage_notifications_warning" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -136,7 +136,7 @@ variable "jmx_memory_non_heap_usage_disabled_critical" {
 }
 
 variable "jmx_memory_non_heap_usage_notifications_critical" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -170,7 +170,7 @@ variable "jmx_memory_codecache_space_usage_disabled_warning" {
 }
 
 variable "jmx_memory_codecache_space_usage_notifications_warning" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -180,7 +180,7 @@ variable "jmx_memory_codecache_space_usage_disabled_critical" {
 }
 
 variable "jmx_memory_codecache_space_usage_notifications_critical" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -214,7 +214,7 @@ variable "jmx_memory_geometry_metaspace_space_usage_disabled_warning" {
 }
 
 variable "jmx_memory_geometry_metaspace_space_usage_notifications_warning" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -224,7 +224,7 @@ variable "jmx_memory_geometry_metaspace_space_usage_disabled_critical" {
 }
 
 variable "jmx_memory_geometry_metaspace_space_usage_notifications_critical" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -258,7 +258,7 @@ variable "jmx_memory_g1_old_gen_space_usage_disabled_warning" {
 }
 
 variable "jmx_memory_g1_old_gen_space_usage_notifications_warning" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -268,7 +268,7 @@ variable "jmx_memory_g1_old_gen_space_usage_disabled_critical" {
 }
 
 variable "jmx_memory_g1_old_gen_space_usage_notifications_critical" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -302,7 +302,7 @@ variable "jmx_memory_compressed_class_space_usage_disabled_warning" {
 }
 
 variable "jmx_memory_compressed_class_space_usage_notifications_warning" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -312,7 +312,7 @@ variable "jmx_memory_compressed_class_space_usage_disabled_critical" {
 }
 
 variable "jmx_memory_compressed_class_space_usage_notifications_critical" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -346,7 +346,7 @@ variable "jmx_memory_survivor_space_usage_disabled_warning" {
 }
 
 variable "jmx_memory_survivor_space_usage_notifications_warning" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 
@@ -356,7 +356,7 @@ variable "jmx_memory_survivor_space_usage_disabled_critical" {
 }
 
 variable "jmx_memory_survivor_space_usage_notifications_critical" {
-  type    = list
+  type        = map(list(string))
   default = []
 }
 

@@ -13,7 +13,7 @@ EOF
     severity              = "Warning"
     detect_label          = "WARN"
     disabled              = coalesce(var.jmx_thread_count_disabled_warning, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_thread_count_notifications_warning, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_thread_count_notifications_warning, "warning", []), var.notifications.warning)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
   rule {
@@ -21,7 +21,7 @@ EOF
     severity              = "Critical"
     detect_label          = "critical"
     disabled              = coalesce(var.jmx_thread_count_disabled_critical, var.detectors_disabled)
-    notifications         = coalescelist(var.jmx_thread_count_notifications_critical, var.notifications)
+    notifications         = coalescelist(lookup(var.jmx_thread_count_notifications_critical, "critical", []), var.notifications.critical)
     parameterized_subject = "[{{ruleSeverity}}]{{{detectorName}}} {{{readableRule}}} on {{{dimensions}}}"
   }
 }
